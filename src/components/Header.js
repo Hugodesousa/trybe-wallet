@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 class Header extends Component {
   render() {
@@ -20,12 +21,12 @@ class Header extends Component {
   }
 }
 
-Header.propTypes = {
-  email: PropTypes.string.isRequired,
-};
-
 const mapStateToProps = (state) => ({
   email: state.user.email,
 });
 
 export default connect(mapStateToProps)(Header);
+
+Header.propTypes = {
+  email: PropTypes.string.isRequired,
+};
