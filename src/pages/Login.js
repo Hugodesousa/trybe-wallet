@@ -9,8 +9,8 @@ class Login extends React.Component {
   constructor() {
     super();
     this.state = {
-      emailInput: 'hugodesousa.16@gmail.com',
-      passWordlInput: '1234516',
+      emailInput: '',
+      passWordlInput: '',
       buttonLogin: true,
       login: false,
     };
