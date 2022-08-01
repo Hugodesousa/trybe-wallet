@@ -1,45 +1,92 @@
-.App {
-  text-align: center;
+.header {
+  background-color: #359939;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.logo {
+  width: 50px;
 }
 
-@media ( prefers-reduced-motion : no-preference ) {
-
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  align-items: center;
-  background-color: #282c34;
+body {
+  background-color: rgb(49, 49, 49);
   color: white;
   display: flex;
-  flex-direction: column;
-  font-size: calc(10px + 2vmin);
   justify-content: center;
-  min-height: 100vh;
 }
 
-.App-link {
-  color: #61dafb;
+.loginConteiner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
+.logoName {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 
-.header {
-  background-color: #61dafb;
+.Login {
+  align-items: center;
+  background-color: rgb(51, 51, 51);
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px 3px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  justify-content: center;
+  margin-top: 30px;
+  width: 300px;
+}
+
+.formLogin {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputLogin {
+  border-radius: 5px;
+  height: 30px;
+  margin: 7px;
+}
+
+.buttonLogin {
+  background-color: #359939; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  margin-top: 15px;
+  padding: 10px 22px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.buttonDespesa {
+  background-color: #359939; /* Green */
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 13px;
+  margin-top: 15px;
+  padding: 8px 22px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.buttonLogin:hover {
+  background-color: #0a4d0d; /* Green */
+}
+
+.buttonLogin:disabled {
+  background-color: #88bd89; /* Green */
+}
+
+.buttonDespesa:hover {
+  background-color: #0a4d0d; /* Green */
+}
+
+.buttonDespesa:disabled {
+  background-color: #88bd89; /* Green */
 }
