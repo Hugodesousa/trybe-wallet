@@ -90,3 +90,8 @@ body {
 .buttonDespesa:disabled {
   background-color: #88bd89; /* Green */
 }
+
+.table {
+  border: solid 2px #359939;
+  padding: 5px;
+}
