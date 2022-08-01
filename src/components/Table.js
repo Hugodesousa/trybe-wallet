@@ -6,9 +6,9 @@ class Table extends Component {
   render() {
     const { despesas } = this.props;
     console.log(despesas);
-    if (despesas.length === 0) {
-      return <> </>;
-    }
+    // if (despesas.length === 0) {
+    //   return <> </>;
+    // }
     return (
       <table>
         <tbody>
