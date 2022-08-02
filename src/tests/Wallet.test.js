@@ -26,7 +26,7 @@ describe('Testa o componete Wallet', () => {
         expect(inputValue).toBeInTheDocument();
         expect(inputDesc).toBeInTheDocument();
     })
-    test('testa se os elementos funcionam como esperado', () => {
+    test('testa se os elementos funcionam como esperado', async () => {
         const INITIAL_STATE = {
             user: {
               email: 'test@email.com'
@@ -44,10 +44,10 @@ describe('Testa o componete Wallet', () => {
         const inputValue = screen.getByPlaceholderText( /Valor/i) 
         const inputDesc = screen.getByPlaceholderText( /Descrição/i) 
         
-        // userEvent.type(inputValue, "100")
-        // userEvent.type(inputDesc), "iphone"
-        // userEvent.click(buttonDespesas)
+        userEvent.type(inputValue, "100")
+        userEvent.type(inputDesc, "iphone")
+        userEvent.click(buttonDespesas)
 
-        // const valor = screen.getByText('100,00')
+        const valor = await screen.findByText('100.00')
     })
 })
