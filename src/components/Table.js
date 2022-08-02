@@ -3,16 +3,33 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 class Table extends Component {
+  tableValues = (desp, exchangeRates) => {
+    if (exchangeRates === null) {
+      const { ask } = desp.exchangeRates[desp.currency];
+      const test = Number(ask);
+      return test.toFixed(2);
+    }
+    const { value, currency } = desp;
+    const { ask } = exchangeRates[currency];
+    const result = value * ask;
+    return result.toFixed(2);
+  }
+
+  valueInput = (value) => {
+    const valueF = Number(value);
+    return valueF.toFixed(2);
+  }
+
   render() {
     const { despesas } = this.props;
-    console.log(despesas);
+
     // if (despesas.length === 0) {
     //   return <> </>;
     // }
     return (
       <table>
-        <tbody>
 
+        <thead>
           <tr>
             <th className="table"> Descrição </th>
             <th className="table"> Tag </th>
@@ -24,18 +41,31 @@ class Table extends Component {
             <th className="table"> Moeda de conversão </th>
             <th className="table"> Editar/Excluir </th>
           </tr>
+        </thead>
+        <tbody>
           {despesas.map((desp) => (
-            <th key={ desp.id }>
+            <tr key={ desp.id }>
               <td>{ desp.description }</td>
               <td>{ desp.tag }</td>
               <td>{ desp.method }</td>
-              <td>{ desp.value }</td>
-              <td>{ desp.currency }</td>
-              <td>{ desp.tag }</td>
-              <td>BRL</td>
+              <td>{ this.valueInput(desp.value) }</td>
+              <td>{ desp.exchangeRates[desp.currency].name }</td>
+              <td>{ this.tableValues(desp, null) }</td>
+              <td>
+                {' '}
+                { this.tableValues(desp, desp.exchangeRates) }
+              </td>
+              <td>Real</td>
+              <td>
+                <button
+                  data-testid="delete-btn"
+                  type="button"
+                >
+                  Deletar
+                </button>
 
-            </th>
-
+              </td>
+            </tr>
           ))}
         </tbody>
 
@@ -50,7 +80,6 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps)(Table);
-// export default Table;
 
 Table.propTypes = {
   despesas: PropTypes.arrayOf(PropTypes.object).isRequired,

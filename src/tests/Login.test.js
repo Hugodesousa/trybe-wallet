@@ -1,12 +1,14 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import { renderWithRouterAndRedux } from "./helpers/renderWith";
 import App from "../App"
 import userEvent from '@testing-library/user-event'
+import { toBeChecked } from "@testing-library/jest-dom";
+import Wallet from "../pages/Wallet";
 
 
-describe('Testa se a pagina de Login e exibida correntamente', () => {
-    test('', async () => {
+describe('Testa a pagina de Login', () => {
+    test('se os elementos aparecem e funcionam corretamente', async () => {
 
         const { history } = renderWithRouterAndRedux(<App/>)
         
@@ -24,16 +26,34 @@ describe('Testa se a pagina de Login e exibida correntamente', () => {
             name: /Entrar/i,
           });
         expect(button).toBeInTheDocument();
-
+        expect(button.disabled).toBe(true)
+        
         userEvent.type(input, "hugo@email.com")
         userEvent.type(input2, "123456")
+        expect(button.disabled).toBe(false)
         userEvent.click(button);
-        const email = await screen.findByTestId('email-field');
+        
+        expect(input).not.toBeInTheDocument();
         // expect(email).toBeInTheDocument();  
+        // const buttonDespesas = screen.getByRole('button', {
+        //     name: /Adicionar despesa/i
+        // }) 
+        // console.log(history.location);
+        
+    })
+    test('', () => {
+        const INITIAL_STATE = {
+            email: 'test@email.com',
+          };
+        // const { history, store } = renderWithRouterAndRedux(<App/>)
+        renderWithRouterAndRedux(<App/>, history="/carteira", store=INITIAL_STATE)
+        
+
+        // history.push('/carteira');
+        // const { pathname } = history.location
         const buttonDespesas = screen.getByRole('button', {
             name: /Adicionar despesa/i
         }) 
-        console.log(history.location);
     })
     
 })

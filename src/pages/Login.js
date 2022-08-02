@@ -96,7 +96,7 @@ class Login extends React.Component {
           </form>
         </div>
 
-        {login ? <Redirect to="/carteira" /> : <p> test </p>}
+        {login ? <Redirect to="/carteira" /> : <> </>}
       </div>);
   }
 }
