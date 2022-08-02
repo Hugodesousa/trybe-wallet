@@ -3,8 +3,7 @@ import { screen } from "@testing-library/react";
 import { renderWithRouterAndRedux } from "./helpers/renderWith";
 import App from "../App"
 import userEvent from '@testing-library/user-event'
-import { toBeChecked } from "@testing-library/jest-dom";
-import Wallet from "../pages/Wallet";
+
 
 
 describe('Testa a pagina de Login', () => {
@@ -41,19 +40,4 @@ describe('Testa a pagina de Login', () => {
         // console.log(history.location);
         
     })
-    test('', () => {
-        const INITIAL_STATE = {
-            email: 'test@email.com',
-          };
-        // const { history, store } = renderWithRouterAndRedux(<App/>)
-        renderWithRouterAndRedux(<App/>, history="/carteira", store=INITIAL_STATE)
-        
-
-        // history.push('/carteira');
-        // const { pathname } = history.location
-        const buttonDespesas = screen.getByRole('button', {
-            name: /Adicionar despesa/i
-        }) 
-    })
-    
 })
