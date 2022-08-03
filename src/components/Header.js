@@ -13,8 +13,9 @@ class Header extends Component {
 
   soma = () => {
     const { valores } = this.props;
+    const initial = 0;
     if (valores.length === 0) {
-      return 0;
+      return initial.toFixed(2);
     }
     const total = valores.reduce((prev, curr) => {
       const { value, exchangeRates, currency } = curr;

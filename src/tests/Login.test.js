@@ -10,7 +10,6 @@ describe('Testa a pagina de Login', () => {
     test('se os elementos aparecem e funcionam corretamente', async () => {
 
         const { history } = renderWithRouterAndRedux(<App/>)
-        
 
         const title = screen.getByRole('heading', {
             name: /Trybe Wallet/i
@@ -32,12 +31,6 @@ describe('Testa a pagina de Login', () => {
         expect(button.disabled).toBe(false)
         userEvent.click(button);
         
-        expect(input).not.toBeInTheDocument();
-        // expect(email).toBeInTheDocument();  
-        // const buttonDespesas = screen.getByRole('button', {
-        //     name: /Adicionar despesa/i
-        // }) 
-        // console.log(history.location);
-        
+        expect(input).not.toBeInTheDocument();   
     })
 })

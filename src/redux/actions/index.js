@@ -2,6 +2,7 @@
 export const LOGIN = 'LOGIN';
 export const GET_COINS = 'GET_COINS';
 export const SAVE_DISMISS = 'SAVE_DISMISS';
+export const DELETE_DISMISS = 'DELETE_DISMISS';
 
 export const onLogin = (email) => ({
   type: LOGIN,
@@ -16,6 +17,10 @@ export const getCoins = (coinsList) => ({
 export const saveDismiss = (coin) => ({
   type: SAVE_DISMISS,
   payload: coin,
+});
+export const deleteDismiss = (id) => ({
+  type: DELETE_DISMISS,
+  payload: id,
 });
 
 export function fetCoin() {

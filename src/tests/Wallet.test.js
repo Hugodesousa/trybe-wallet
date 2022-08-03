@@ -43,11 +43,19 @@ describe('Testa o componete Wallet', () => {
         })
         const inputValue = screen.getByPlaceholderText( /Valor/i) 
         const inputDesc = screen.getByPlaceholderText( /Descrição/i) 
+
         
         userEvent.type(inputValue, "100")
         userEvent.type(inputDesc, "iphone")
         userEvent.click(buttonDespesas)
 
+        const deleteButoon = await screen.findByRole('button', {
+          name: /Deletar/i
+        })
         const valor = await screen.findByText('100.00')
+        expect(valor && deleteButoon).toBeInTheDocument()
+
+        userEvent.click(deleteButoon)
+        expect(valor && deleteButoon).not.toBeInTheDocument()
     })
 })
