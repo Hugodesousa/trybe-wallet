@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import logo from '../img/logo.png';
 
 class Header extends Component {
   constructor() {
@@ -38,7 +37,6 @@ class Header extends Component {
           {`EMAIL: ${email}`}
           {' '}
         </h3>
-        {/* <img src={ logo } alt="logo" className="logoHeader" /> */}
         <div className="valueContainer">
           {email.length === 0 ? <Redirect to="/" /> : <> </>}
           <div>

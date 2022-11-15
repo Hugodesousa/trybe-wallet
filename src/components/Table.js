@@ -33,8 +33,7 @@ class Table extends Component {
     //   return <> </>;
     // }
     return (
-      <table>
-
+      <table className="table-responsive">
         <thead>
           <tr>
             <th className="table"> Descrição </th>

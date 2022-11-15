@@ -3,6 +3,7 @@
   background-color: #359939;
   display: flex;
   justify-content: space-around;
+  width: 100%;
 }
 
 .logo {
@@ -143,4 +144,43 @@ table button {
   border: none;
   color: white;
   padding: 0.3rem;
+}
+
+@media screen and ( max-width : 780px ) {
+
+  .table-responsive {
+    display: block;
+    margin: 2rem;
+    position: relative;
+    width: 100%;
+  }
+
+  .table-responsive thead , .table-responsive tbody , .table-responsive th {
+    display: block;
+  }
+
+  .table-responsive td , .table-responsive tr {
+    display: block;
+  }
+
+  .table-responsive td,
+  .table-responsive th {
+    height: 35px;
+  }
+
+  .table-responsive thead {
+    float: left;
+  }
+
+  .table-responsive tbody {
+    -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+    position: relative;
+    white-space: nowrap;
+    width: auto;
+  }
+
+  .table-responsive tbody tr {
+    display: inline-block;
+  }
 }
