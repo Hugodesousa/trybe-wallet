@@ -1,22 +1,52 @@
 .header {
+  align-items: center;
   background-color: #359939;
+  display: flex;
+  justify-content: space-around;
 }
 
 .logo {
   width: 50px;
 }
 
+.logoHeader {
+  height: 100px;
+  padding: 1rem;
+}
+
+.valueContainer {
+  align-items: center;
+  border: solid white;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+}
+
+.valueContainer div {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.value {
+  margin: 0;
+  padding: 0;
+}
+
 body {
   background-color: rgb(49, 49, 49);
   color: white;
-  display: flex;
-  justify-content: center;
+
+  /* display: flex;
+  justify-content: center; */
 }
 
 .loginConteiner {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .logoName {
@@ -94,4 +124,23 @@ body {
 .table {
   border: solid 2px #359939;
   padding: 5px;
+}
+
+.walletApp {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.despTable {
+  border: solid 2px white;
+  padding: 5px;
+}
+
+table button {
+  background-color: red;
+  border: none;
+  color: white;
+  padding: 0.3rem;
 }

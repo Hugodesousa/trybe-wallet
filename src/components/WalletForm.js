@@ -54,8 +54,11 @@ class WalletForm extends Component {
     const { value, description, method, currency, tag } = this.state;
     // console.log(coins); na primeira renderização coin e um array vazio
     return (
-      <div>
-        <p>WalletForm</p>
+      <div className="">
+        <h1>Wallet</h1>
+        <h3>
+          Digite o valor e uma descrição de compra, o app convertera os valores da moeda selecionada para BRL.
+        </h3>
         <form>
           <label htmlFor="value">
             <input
