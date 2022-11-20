@@ -32,14 +32,30 @@ class Header extends Component {
 
     return (
       <div className="header">
-        <p data-testid="email-field">
+        <h3 data-testid="email-field">
           {' '}
-          {`email: ${email}`}
+          {`EMAIL: ${email}`}
           {' '}
-        </p>
-        {email.length === 0 ? <Redirect to="/" /> : <> </>}
-        <p data-testid="total-field">{ this.soma() }</p>
-        <p data-testid="header-currency-field">BRL</p>
+        </h3>
+        <div className="valueContainer">
+          {email.length === 0 ? <Redirect to="/" /> : <> </>}
+          <div>
+            <h4
+              className="value"
+              data-testid="total-field"
+            >
+              { `R$ ${this.soma()}` }
+
+            </h4>
+            <h4
+              className="value"
+              data-testid="header-currency-field"
+            >
+              BRL
+
+            </h4>
+          </div>
+        </div>
       </div>
     );
   }

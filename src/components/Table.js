@@ -33,8 +33,7 @@ class Table extends Component {
     //   return <> </>;
     // }
     return (
-      <table>
-
+      <table className="table-responsive">
         <thead>
           <tr>
             <th className="table"> Descrição </th>
@@ -51,18 +50,18 @@ class Table extends Component {
         <tbody>
           {despesas.map((desp) => (
             <tr key={ desp.id }>
-              <td>{ desp.description }</td>
-              <td>{ desp.tag }</td>
-              <td>{ desp.method }</td>
-              <td>{ this.valueInput(desp.value) }</td>
-              <td>{ desp.exchangeRates[desp.currency].name }</td>
-              <td>{ this.tableValues(desp, null) }</td>
-              <td>
+              <td className="despTable">{ desp.description }</td>
+              <td className="despTable">{ desp.tag }</td>
+              <td className="despTable">{ desp.method }</td>
+              <td className="despTable">{ this.valueInput(desp.value) }</td>
+              <td className="despTable">{ desp.exchangeRates[desp.currency].name }</td>
+              <td className="despTable">{ this.tableValues(desp, null) }</td>
+              <td className="despTable">
                 {' '}
                 { this.tableValues(desp, desp.exchangeRates) }
               </td>
-              <td>Real</td>
-              <td>
+              <td className="despTable">Real</td>
+              <td className="despTable">
                 <button
                   data-testid="delete-btn"
                   type="button"
